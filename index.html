@@ -282,7 +282,11 @@ Date of Event (if applicable):<br>
 <input name="date" id="date" type="date" data-role="datebox" data-theme="b" data-transition="none"
    data-options='{"mode": "calbox", "useFocus":true}'>
 
+<br>
+Additional Comments:<br>
+<textarea name="requesttext">
 
+</textarea>
 
 <input id="hide" style="height:50px; font-size:1em;" type="button" value="submit" onClick="sendCert()"/>
 
@@ -304,7 +308,7 @@ var email=document.forms ["cert"] ["email"].value;
 var holderName=document.forms ["cert"] ["holderName"].value;
 var holderAddress=document.forms ["cert"] ["holderAddress"].value;
 var date=document.forms ["cert"] ["date"].value;
-
+var requesttext=document.forms ["cert"] ["requesttext"].value;
 /*
 if (whatRequesting==null || whatRequesting=="")
 {alert ("Please answer if you are requesting a certificate or additional insured");
@@ -348,7 +352,7 @@ var req = $.ajax({
             type: "GET",
             url: "http://www.theschantzagency.com/app/get_form.php?callback=json_success",
             dataType: "jsonp",        
-            data: {formName: formName, whatRequesting:whatRequesting, actualName: actualName, email: email, holderName:holderName, holderAddress:holderAddress, date:date},
+            data: {formName: formName, whatRequesting:whatRequesting, actualName: actualName, email: email, holderName:holderName, holderAddress:holderAddress, date:date, requesttext:requesttext},
 }); 
 
 
